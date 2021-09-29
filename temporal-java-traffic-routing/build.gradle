@@ -1,0 +1,15 @@
+dependencies {
+  implementation(project(":temporal-java-core"))
+  implementation(project(":temporal-java-spring"))
+  implementation("netflix.io.temporal:temporal-sdk")
+  implementation("com.google.guava:guava")
+  implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml")
+  implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
+  compileOnly("org.springframework.boot:spring-boot-starter-actuator")
+
+  testImplementation("org.springframework.boot:spring-boot-starter-test") {
+    exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+  }
+  testImplementation("io.strikt:strikt-core:$striktVersion")
+}
